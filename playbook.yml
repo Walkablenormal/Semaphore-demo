@@ -9,7 +9,7 @@
   tasks:
     - name: Set new hostname
       vyos_command:
-        commands: "set system host-name {{ new_hostname }}"
+        commands: "set system host-name my-vyos-router"
       register: output
 
     - name: Commit changes
