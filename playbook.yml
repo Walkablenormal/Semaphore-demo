@@ -2,9 +2,6 @@
 - name: Configure VyOS Hostname
   hosts: vyos
   gather_facts: no
-  
-  vars:
-    new_hostname: "my-vyos-router"
 
   tasks:
   - name: Apply the provided configuration
