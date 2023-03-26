@@ -4,29 +4,21 @@
   gather_facts: no
   
   vars:
-    vyos_username: "vyos"
-    vyos_password: "vyos"
     new_hostname: "my-vyos-router"
 
   tasks:
     - name: Set new hostname
       vyos_command:
         commands: "set system host-name {{ new_hostname }}"
-        username: "{{ vyos_username }}"
-        password: "{{ vyos_password }}"
       register: output
 
     - name: Commit changes
       vyos_command:
         commands: "commit"
-        username: "{{ vyos_username }}"
-        password: "{{ vyos_password }}"
 
     - name: Save configuration
       vyos_command:
         commands: "save"
-        username: "{{ vyos_username }}"
-        password: "{{ vyos_password }}"
 
     - name: Display output
       debug:
