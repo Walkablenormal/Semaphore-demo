@@ -1,0 +1,11 @@
+---
+- name: Configure VyOS Hostname
+  hosts: vyos
+  gather_facts: no
+
+  tasks:
+  - name: Apply the provided configuration
+    vyos.vyos.vyos_hostname:
+      config:
+        hostname: "{{ Router_hostname }}"
+      state: merged
