@@ -4,7 +4,12 @@
   gather_facts: no
 
   tasks:
-  - name: show configuration on ethernet devices eth0 and eth1
+  - name: show configuration on ethernet devices eth0
     vyos.vyos.vyos_command:
       commands:
       - show interfaces ethernet eth0
+    register: interface
+  
+  - name: Debug
+    debug:
+      msg: "{{ interface }}"
