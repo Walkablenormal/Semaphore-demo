@@ -1,10 +1,10 @@
 ---
 - name: Configure VyOS Hostname
-  hosts: vyos_devices
+  hosts: vyos
   gather_facts: no
   vars:
     vyos_username: "vyos"
-    vyos_password: "mysecretpassword"
+    vyos_password: "vyos"
     new_hostname: "my-vyos-router"
 
   tasks:
