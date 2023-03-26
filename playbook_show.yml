@@ -1,0 +1,10 @@
+---
+- name: Configure VyOS Hostname
+  hosts: vyos
+  gather_facts: no
+
+  tasks:
+  - name: show configuration on ethernet devices eth0 and eth1
+    vyos.vyos.vyos_command:
+      commands:
+      - show interfaces ethernet eth0
