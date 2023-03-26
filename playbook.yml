@@ -7,19 +7,8 @@
     new_hostname: "my-vyos-router"
 
   tasks:
-    - name: Set new hostname
-      vyos_command:
-        commands: "set system host-name my-vyos-router"
-      register: output
-
-    - name: Commit changes
-      vyos_command:
-        commands: "commit"
-
-    - name: Save configuration
-      vyos_command:
-        commands: "save"
-
-    - name: Display output
-      debug:
-        var: output.stdout_lines
+  - name: Apply the provided configuration
+    vyos.vyos.vyos_hostname:
+      config:
+        hostname: RubenRouter
+      state: merged
