@@ -1,0 +1,12 @@
+---
+- name: Set and Print a Variable
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    my_var: "Hello, world!"
+
+  tasks:
+    - name: Print the Variable
+      debug:
+        var: my_var
